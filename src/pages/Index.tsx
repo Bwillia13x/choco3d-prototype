@@ -6,7 +6,9 @@ import HumanoidSection from "@/components/HumanoidSection";
 import SpecsSection from "@/components/SpecsSection";
 import DetailsSection from "@/components/DetailsSection";
 import ImageShowcaseSection from "@/components/ImageShowcaseSection";
+import Gallery from "@/components/Gallery";
 import Features from "@/components/Features";
+import CTA from "@/components/CTA";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import MadeByHumans from "@/components/MadeByHumans";
@@ -67,7 +69,9 @@ const Index = () => {
         <SpecsSection />
         <DetailsSection />
         <ImageShowcaseSection />
+        <Gallery />
         <Features />
+        <CTA />
         <Testimonials />
         <Newsletter />
         <MadeByHumans />

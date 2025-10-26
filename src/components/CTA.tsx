@@ -44,21 +44,22 @@ const CTA = () => {
           </div>
           
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-            Be Among the First to <br className="hidden sm:inline" />
-            <span className="text-pulse-500">Experience Atlas</span>
+            Transform Your Business with <br className="hidden sm:inline" />
+            <span className="text-pulse-500">Industrial 3D Chocolate Printing</span>
           </h2>
           
           <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto">
-            We're accepting a limited number of early adopters. Submit your application today to secure your place in the future of robotics.
+            Join leading chocolatiers, patisseries, and hospitality businesses already using Choco3D 
+            to create stunning customized designs, reduce production time, and eliminate waste.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="#contact" className="button-primary group flex items-center justify-center w-full sm:w-auto">
-              Request Early Access
+              Request a Demo
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
-            <a href="#" className="button-secondary w-full sm:w-auto text-center">
-              Join Waitlist
+            <a href="#specifications" className="button-secondary w-full sm:w-auto text-center">
+              View Technical Specs
             </a>
           </div>
         </div>

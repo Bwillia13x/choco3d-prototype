@@ -1,5 +1,5 @@
-
 import React, { useRef } from "react";
+import { Quote } from "lucide-react";
 
 interface TestimonialProps {
   content: string;
@@ -41,40 +41,72 @@ const TestimonialCard = ({
   role,
   backgroundImage = "/background-section1.png"
 }: TestimonialProps) => {
-  return <div className="bg-cover bg-center rounded-lg p-8 h-full flex flex-col justify-between text-white transform transition-transform duration-300 hover:-translate-y-2 relative overflow-hidden" style={{
-    backgroundImage: `url('${backgroundImage}')`
-  }}>
-      <div className="absolute top-0 right-0 w-24 h-24 bg-white z-10"></div>
+  return (
+    <div className="group relative bg-cover bg-center rounded-2xl p-8 sm:p-10 h-full flex flex-col justify-between text-white transform transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl overflow-hidden" style={{
+      backgroundImage: `url('${backgroundImage}')`
+    }}>
+      {/* Overlay gradient for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-black/60 group-hover:from-black/50 group-hover:via-black/30 group-hover:to-black/70 transition-all duration-500"></div>
       
-      <div className="relative z-0">
-        <p className="text-xl mb-8 font-medium leading-relaxed pr-20">{`"${content}"`}</p>
-        <div>
-          <h4 className="font-semibold text-xl">{author}</h4>
-          <p className="text-white/80">{role}</p>
+      {/* Decorative corner element */}
+      <div className="absolute top-0 right-0 w-20 h-20 bg-white/90 rounded-bl-3xl flex items-center justify-center">
+        <Quote className="w-10 h-10 text-pulse-500 transform rotate-180" />
+      </div>
+      
+      <div className="relative z-10">
+        <div className="mb-6">
+          <Quote className="w-12 h-12 text-white/40 mb-4" />
+        </div>
+        <p className="text-lg sm:text-xl mb-8 font-medium leading-relaxed text-white/95 pr-12">
+          {content}
+        </p>
+        <div className="border-t border-white/20 pt-6 mt-auto">
+          <h4 className="font-semibold text-xl mb-1">{author}</h4>
+          <p className="text-white/70 text-sm">{role}</p>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
 
 const Testimonials = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  return <section className="py-12 bg-white relative" id="testimonials" ref={sectionRef}> {/* Reduced from py-20 */}
+  return (
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white relative" id="testimonials" ref={sectionRef}>
       <div className="section-container opacity-0 animate-on-scroll">
-        <div className="flex items-center gap-4 mb-6">
-          <div className="pulse-chip">
-            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">04</span>
-            <span>Testimonials</span>
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+          <div className="pulse-chip mx-auto mb-4 sm:mb-6">
+            <span>Success Stories</span>
           </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight text-gray-900 mb-4">
+            Loved by Industry Leaders
+          </h2>
+          <p className="text-base sm:text-lg text-gray-600">
+            Discover how businesses like yours are transforming their chocolate production with Choco3D
+          </p>
         </div>
         
-        <h2 className="text-5xl font-display font-bold mb-12 text-left">What others say</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => <TestimonialCard key={index} content={testimonial.content} author={testimonial.author} role={testimonial.role} gradient={testimonial.gradient} backgroundImage={testimonial.backgroundImage} />)}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
+          {testimonials.map((testimonial, index) => (
+            <div 
+              key={index} 
+              className="opacity-0 animate-on-scroll"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <TestimonialCard 
+                content={testimonial.content} 
+                author={testimonial.author} 
+                role={testimonial.role} 
+                gradient={testimonial.gradient} 
+                backgroundImage={testimonial.backgroundImage} 
+              />
+            </div>
+          ))}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default Testimonials;

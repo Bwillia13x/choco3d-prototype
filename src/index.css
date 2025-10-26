@@ -159,15 +159,15 @@
   }
 
   .feature-card {
-    @apply p-6 rounded-2xl transition-all duration-500 hover:translate-y-[-5px];
+    @apply p-6 rounded-2xl transition-all duration-500 hover:translate-y-[-5px] hover:shadow-xl;
   }
   
   .button-primary {
-    @apply bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98];
+    @apply bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98];
   }
 
   .button-secondary {
-    @apply bg-transparent border border-gray-300 hover:border-pulse-500 text-gray-800 hover:text-pulse-500 font-medium py-3 px-6 rounded-full transition-all duration-300;
+    @apply bg-transparent border-2 border-gray-300 hover:border-pulse-500 text-gray-800 hover:text-pulse-500 font-medium py-3 px-6 rounded-full transition-all duration-300 hover:bg-pulse-50;
   }
   
   .nav-link {
@@ -220,4 +220,25 @@
 .parallax {
   transform: translateY(var(--parallax-y, 0));
   transition: transform 0.1s ease-out;
+}
+
+/* Shadow utilities */
+.shadow-elegant {
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1), 0 0 20px -5px rgba(251, 146, 60, 0.05);
+}
+
+.shadow-elegant-hover {
+  box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.15), 0 0 30px -8px rgba(251, 146, 60, 0.1);
+}
+
+/* Smooth transitions for all interactive elements */
+a, button, input, textarea {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus visible improvements */
+*:focus-visible {
+  outline: 2px solid hsl(var(--pulse-500));
+  outline-offset: 2px;
+  border-radius: 4px;
 }

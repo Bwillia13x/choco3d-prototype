@@ -10,27 +10,27 @@ interface TestimonialProps {
 }
 
 const testimonials: TestimonialProps[] = [{
-  content: "Atlas transformed our production line, handling repetitive tasks while our team focuses on innovation. 30% increase in output within three months.",
+  content: "Choco3D revolutionized our luxury chocolate line. We can now offer completely personalized designs at scale, delighting our corporate clients with unprecedented customization.",
   author: "Sarah Chen",
-  role: "VP of Operations, Axion Manufacturing",
+  role: "Head Chocolatier, Luxe Confections",
   gradient: "from-blue-700 via-indigo-800 to-purple-900",
   backgroundImage: "/background-section1.png"
 }, {
-  content: "Implementing Atlas in our fulfillment centers reduced workplace injuries by 40% while improving order accuracy. The learning capabilities are remarkable.",
+  content: "The precision and consistency are game-changing. We reduced production time by 60% while maintaining the artisanal quality our hotel chain demands.",
   author: "Michael Rodriguez",
-  role: "Director of Logistics, GlobalShip",
+  role: "F&B Director, Prestige Hotels Group",
   gradient: "from-indigo-900 via-purple-800 to-orange-500",
   backgroundImage: "/background-section2.png"
 }, {
-  content: "Atlas adapted to our lab protocols faster than any system we've used. It's like having another researcher who never gets tired and maintains perfect precision.",
+  content: "As a specialty baker, Choco3D allowed us to expand into custom chocolate work without hiring additional staff. The ROI was clear within 6 months.",
   author: "Dr. Amara Patel",
-  role: "Lead Scientist, BioAdvance Research",
+  role: "Owner, Artisan Patisserie",
   gradient: "from-purple-800 via-pink-700 to-red-500",
   backgroundImage: "/background-section3.png"
 }, {
-  content: "As a mid-size business, we never thought advanced robotics would be accessible to us. Atlas changed that equation entirely with its versatility and ease of deployment.",
+  content: "Our event planning business now offers chocolate favors that match any theme perfectly. Choco3D has become our competitive advantage in the luxury market.",
   author: "Jason Lee",
-  role: "CEO, Innovative Solutions Inc.",
+  role: "CEO, Premier Events Co.",
   gradient: "from-orange-600 via-red-500 to-purple-600",
   backgroundImage: "/background-section1.png"
 }];

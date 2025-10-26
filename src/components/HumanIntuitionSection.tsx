@@ -10,20 +10,18 @@ const HumanIntuitionSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-left">
             <div className="pulse-chip mb-4">
-              <span>Human-Like Intuition</span>
+              <span>Precision Engineering</span>
             </div>
-            <h2 className="section-title mb-6">Beyond algorithms to true understanding</h2>
+            <h2 className="section-title mb-6">Beyond traditional chocolate crafting</h2>
             <p className="text-lg text-gray-700 mb-6">
-              Atlas goes beyond programmed responses to develop contextual awareness and
-              adaptive learning patterns that mirror human intuition. This enables natural
-              interactions that feel like working with a human colleague rather than a machine.
+              Choco3D transforms chocolate production with cutting-edge 3D printing technology that delivers unprecedented precision and customization. Create intricate designs that were impossible with traditional methods, at scale for your business needs.
             </p>
             <ul className="space-y-4">
               {[
-                "Learns from human demonstrations and refines its approach over time",
-                "Anticipates needs based on situational awareness and past interactions",
-                "Adapts to changing environments without explicit reprogramming",
-                "Makes decisions with nuanced understanding of human preferences"
+                "Print complex geometries with micron-level precision",
+                "Scale from prototypes to high-volume production seamlessly",
+                "Customize designs for each client without retooling",
+                "Reduce waste with exact material usage and minimal leftovers"
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <div className="mr-3 text-pulse-500">

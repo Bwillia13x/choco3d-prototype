@@ -116,12 +116,12 @@ const Navbar = () => {
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-2">
+        <nav className="hidden lg:flex items-center gap-2">
           <a 
             href="#hero" 
             onClick={(e) => handleNavClick(e, 'hero')}
             className={cn(
-              "relative px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300",
+              "px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 whitespace-nowrap",
               activeSection === "hero" 
                 ? "bg-pulse-500 text-white shadow-md" 
                 : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
@@ -133,7 +133,7 @@ const Navbar = () => {
             href="#specifications" 
             onClick={(e) => handleNavClick(e, 'specifications')}
             className={cn(
-              "relative px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300",
+              "px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 whitespace-nowrap",
               activeSection === "specifications" 
                 ? "bg-pulse-500 text-white shadow-md" 
                 : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
@@ -145,7 +145,7 @@ const Navbar = () => {
             href="#gallery" 
             onClick={(e) => handleNavClick(e, 'gallery')}
             className={cn(
-              "relative px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300",
+              "px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 whitespace-nowrap",
               activeSection === "gallery" 
                 ? "bg-pulse-500 text-white shadow-md" 
                 : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
@@ -157,7 +157,7 @@ const Navbar = () => {
             href="#features" 
             onClick={(e) => handleNavClick(e, 'features')}
             className={cn(
-              "relative px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300",
+              "px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 whitespace-nowrap",
               activeSection === "features" 
                 ? "bg-pulse-500 text-white shadow-md" 
                 : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
@@ -169,7 +169,7 @@ const Navbar = () => {
             href="#testimonials" 
             onClick={(e) => handleNavClick(e, 'testimonials')}
             className={cn(
-              "relative px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300",
+              "px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 whitespace-nowrap",
               activeSection === "testimonials" 
                 ? "bg-pulse-500 text-white shadow-md" 
                 : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
@@ -177,11 +177,11 @@ const Navbar = () => {
           >
             Testimonials
           </a>
-          <div className="h-6 w-px bg-gray-300 mx-2"></div>
+          <div className="w-px h-6 bg-gray-300 mx-2"></div>
           <a 
             href="#get-access" 
             onClick={(e) => handleNavClick(e, 'get-access')}
-            className="button-primary text-sm py-2.5 px-5 inline-flex items-center shadow-md hover:shadow-lg"
+            className="button-primary text-sm py-2.5 px-5 inline-flex items-center shadow-md hover:shadow-lg whitespace-nowrap"
           >
             Get Started
             <ArrowRight className="ml-2 w-4 h-4" />

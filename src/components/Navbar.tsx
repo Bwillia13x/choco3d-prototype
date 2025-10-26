@@ -10,22 +10,34 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
       
-      // Detect active section
+      // Detect active section with better threshold
       const sections = ["hero", "specifications", "showcase", "gallery", "features", "testimonials"];
-      const current = sections.find(section => {
+      const navHeight = 80; // Account for fixed navbar
+      
+      let current = "";
+      for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+          // Check if section is in the viewport center
+          if (rect.top <= navHeight + 50 && rect.bottom >= navHeight + 50) {
+            current = section;
+            break;
+          }
         }
-        return false;
-      });
+      }
       
-      setActiveSection(current || "");
+      // Default to hero when at top
+      if (window.scrollY < 100) {
+        current = "hero";
+      }
+      
+      setActiveSection(current);
     };
     
+    handleScroll(); // Call once on mount
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -48,101 +60,128 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-    // Prevent background scrolling when menu is open
-    document.body.style.overflow = !isMenuOpen ? 'hidden' : '';
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    document.body.style.overflow = '';
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+  const toggleMenu = () => {
+    const newState = !isMenuOpen;
+    setIsMenuOpen(newState);
+    document.body.style.overflow = newState ? 'hidden' : '';
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    closeMenu();
     
-    // Close mobile menu if open
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-      document.body.style.overflow = '';
+    const target = document.getElementById(targetId);
+    if (target) {
+      const navHeight = 80;
+      const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled 
-          ? "bg-white/80 backdrop-blur-md shadow-sm" 
-          : "bg-transparent"
+          ? "bg-white/95 backdrop-blur-lg shadow-md py-3" 
+          : "bg-white/80 backdrop-blur-sm py-4"
       )}
     >
-      <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a 
-          href="#" 
-          className="flex items-center space-x-2"
+      <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <button 
           onClick={(e) => {
             e.preventDefault();
-            scrollToTop();
+            handleNavClick(e as any, 'hero');
           }}
-          aria-label="Choco3D"
+          className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+          aria-label="Choco3D Home"
         >
           <img 
             src="/choco3d-logo.png" 
             alt="Choco3D Logo" 
-            className="h-10 sm:h-12" 
+            className={cn(
+              "transition-all duration-300",
+              isScrolled ? "h-9 sm:h-10" : "h-10 sm:h-12"
+            )} 
           />
-        </a>
+        </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-1">
+        <nav className="hidden lg:flex items-center space-x-2">
           <a 
             href="#hero" 
+            onClick={(e) => handleNavClick(e, 'hero')}
             className={cn(
-              "nav-link px-4 py-2 rounded-lg transition-all duration-300",
-              activeSection === "hero" ? "bg-pulse-50 text-pulse-600" : ""
+              "relative px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300",
+              activeSection === "hero" 
+                ? "bg-pulse-500 text-white shadow-md" 
+                : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
             )}
           >
             Home
           </a>
           <a 
             href="#specifications" 
+            onClick={(e) => handleNavClick(e, 'specifications')}
             className={cn(
-              "nav-link px-4 py-2 rounded-lg transition-all duration-300",
-              activeSection === "specifications" ? "bg-pulse-50 text-pulse-600" : ""
+              "relative px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300",
+              activeSection === "specifications" 
+                ? "bg-pulse-500 text-white shadow-md" 
+                : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
             )}
           >
             Technology
           </a>
           <a 
             href="#gallery" 
+            onClick={(e) => handleNavClick(e, 'gallery')}
             className={cn(
-              "nav-link px-4 py-2 rounded-lg transition-all duration-300",
-              activeSection === "gallery" ? "bg-pulse-50 text-pulse-600" : ""
+              "relative px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300",
+              activeSection === "gallery" 
+                ? "bg-pulse-500 text-white shadow-md" 
+                : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
             )}
           >
             Gallery
           </a>
           <a 
             href="#features" 
+            onClick={(e) => handleNavClick(e, 'features')}
             className={cn(
-              "nav-link px-4 py-2 rounded-lg transition-all duration-300",
-              activeSection === "features" ? "bg-pulse-50 text-pulse-600" : ""
+              "relative px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300",
+              activeSection === "features" 
+                ? "bg-pulse-500 text-white shadow-md" 
+                : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
             )}
           >
             Features
           </a>
           <a 
             href="#testimonials" 
+            onClick={(e) => handleNavClick(e, 'testimonials')}
             className={cn(
-              "nav-link px-4 py-2 rounded-lg transition-all duration-300",
-              activeSection === "testimonials" ? "bg-pulse-50 text-pulse-600" : ""
+              "relative px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300",
+              activeSection === "testimonials" 
+                ? "bg-pulse-500 text-white shadow-md" 
+                : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
             )}
           >
             Testimonials
           </a>
+          <div className="h-6 w-px bg-gray-300 mx-2"></div>
           <a 
             href="#get-access" 
-            className="button-primary ml-4 inline-flex items-center"
+            onClick={(e) => handleNavClick(e, 'get-access')}
+            className="button-primary text-sm py-2.5 px-5 inline-flex items-center shadow-md hover:shadow-lg"
           >
             Get Started
             <ArrowRight className="ml-2 w-4 h-4" />
@@ -151,7 +190,7 @@ const Navbar = () => {
 
         {/* Mobile menu button */}
         <button 
-          className="lg:hidden text-gray-700 p-3 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none" 
+          className="lg:hidden text-gray-700 p-2 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none active:scale-95" 
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -162,11 +201,8 @@ const Navbar = () => {
       {/* Mobile Navigation Overlay */}
       {isMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden transition-opacity duration-300"
-          onClick={() => {
-            setIsMenuOpen(false);
-            document.body.style.overflow = '';
-          }}
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden animate-fade-in"
+          onClick={closeMenu}
         />
       )}
       
@@ -187,10 +223,7 @@ const Navbar = () => {
               className="h-10" 
             />
             <button 
-              onClick={() => {
-                setIsMenuOpen(false);
-                document.body.style.overflow = '';
-              }}
+              onClick={closeMenu}
               className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
               aria-label="Close menu"
             >
@@ -203,76 +236,61 @@ const Navbar = () => {
             <div className="flex flex-col space-y-2">
               <a 
                 href="#hero" 
+                onClick={(e) => handleNavClick(e, 'hero')}
                 className={cn(
                   "text-lg font-medium py-3 px-4 rounded-lg transition-all duration-300",
                   activeSection === "hero" 
-                    ? "bg-pulse-50 text-pulse-600" 
-                    : "hover:bg-gray-100"
+                    ? "bg-pulse-500 text-white" 
+                    : "text-gray-700 hover:bg-gray-100"
                 )}
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  document.body.style.overflow = '';
-                }}
               >
                 Home
               </a>
               <a 
                 href="#specifications" 
+                onClick={(e) => handleNavClick(e, 'specifications')}
                 className={cn(
                   "text-lg font-medium py-3 px-4 rounded-lg transition-all duration-300",
                   activeSection === "specifications" 
-                    ? "bg-pulse-50 text-pulse-600" 
-                    : "hover:bg-gray-100"
+                    ? "bg-pulse-500 text-white" 
+                    : "text-gray-700 hover:bg-gray-100"
                 )}
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  document.body.style.overflow = '';
-                }}
               >
                 Technology
               </a>
               <a 
                 href="#gallery" 
+                onClick={(e) => handleNavClick(e, 'gallery')}
                 className={cn(
                   "text-lg font-medium py-3 px-4 rounded-lg transition-all duration-300",
                   activeSection === "gallery" 
-                    ? "bg-pulse-50 text-pulse-600" 
-                    : "hover:bg-gray-100"
+                    ? "bg-pulse-500 text-white" 
+                    : "text-gray-700 hover:bg-gray-100"
                 )}
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  document.body.style.overflow = '';
-                }}
               >
                 Gallery
               </a>
               <a 
                 href="#features" 
+                onClick={(e) => handleNavClick(e, 'features')}
                 className={cn(
                   "text-lg font-medium py-3 px-4 rounded-lg transition-all duration-300",
                   activeSection === "features" 
-                    ? "bg-pulse-50 text-pulse-600" 
-                    : "hover:bg-gray-100"
+                    ? "bg-pulse-500 text-white" 
+                    : "text-gray-700 hover:bg-gray-100"
                 )}
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  document.body.style.overflow = '';
-                }}
               >
                 Features
               </a>
               <a 
                 href="#testimonials" 
+                onClick={(e) => handleNavClick(e, 'testimonials')}
                 className={cn(
                   "text-lg font-medium py-3 px-4 rounded-lg transition-all duration-300",
                   activeSection === "testimonials" 
-                    ? "bg-pulse-50 text-pulse-600" 
-                    : "hover:bg-gray-100"
+                    ? "bg-pulse-500 text-white" 
+                    : "text-gray-700 hover:bg-gray-100"
                 )}
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  document.body.style.overflow = '';
-                }}
               >
                 Testimonials
               </a>
@@ -283,11 +301,8 @@ const Navbar = () => {
           <div className="p-6 border-t bg-gray-50">
             <a 
               href="#get-access" 
+              onClick={(e) => handleNavClick(e, 'get-access')}
               className="button-primary w-full inline-flex items-center justify-center"
-              onClick={() => {
-                setIsMenuOpen(false);
-                document.body.style.overflow = '';
-              }}
             >
               Get Started
               <ArrowRight className="ml-2 w-4 h-4" />

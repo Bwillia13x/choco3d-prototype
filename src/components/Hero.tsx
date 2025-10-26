@@ -89,15 +89,17 @@ const Hero = () => {
   
   return (
     <section 
-      className="overflow-hidden relative bg-cover" 
+      className="overflow-hidden relative bg-cover bg-gradient-to-b from-orange-50/30 via-white to-white" 
       id="hero" 
       style={{
         backgroundImage: 'url("/Header-background.webp")',
         backgroundPosition: 'center 30%', 
+        backgroundBlendMode: 'soft-light',
         padding: isMobile ? '100px 12px 40px' : '120px 20px 60px'
       }}
     >
-      <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
+      <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] bg-gradient-to-br from-pulse-500/20 to-orange-300/10 opacity-30 blur-3xl rounded-full"></div>
+      <div className="absolute bottom-[20%] -left-[10%] w-1/3 h-[50%] bg-gradient-to-tr from-pulse-400/15 to-transparent opacity-20 blur-3xl rounded-full"></div>
       
       <div className="container px-4 sm:px-6 lg:px-8" ref={containerRef}>
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">

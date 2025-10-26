@@ -57,7 +57,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-gray-50" id="gallery">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white via-gray-50/50 to-white" id="gallery">
       <div className="section-container px-4 sm:px-6">
         <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-16">
           <div className="pulse-chip mx-auto mb-4 sm:mb-6">
@@ -65,7 +65,7 @@ const Gallery = () => {
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight text-gray-900 mb-4 sm:mb-6">
             Chocolate Artistry <br className="hidden sm:inline" />
-            <span className="text-pulse-500">Redefined</span>
+            <span className="text-gradient-primary">Redefined</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-600">
             From intricate geometric patterns to organic flowing designs, Choco3D transforms 
@@ -80,7 +80,7 @@ const Gallery = () => {
               className="gallery-item opacity-0 group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 cursor-pointer">
+              <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 cursor-pointer border border-gray-100 hover:border-pulse-200">
                 <div className="aspect-square overflow-hidden">
                   <img 
                     src={item.image} 

@@ -73,7 +73,7 @@ const Testimonials = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white relative" id="testimonials" ref={sectionRef}>
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative" id="testimonials" ref={sectionRef}>
       <div className="section-container animate-on-scroll">
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
           <div className="pulse-chip mx-auto mb-4 sm:mb-6">

@@ -55,9 +55,9 @@ const Navbar = () => {
           aria-label="Choco3D"
         >
           <img 
-            src="/logo.svg" 
+            src="/choco3d-logo.png" 
             alt="Choco3D Logo" 
-            className="h-7 sm:h-8" 
+            className="h-10 sm:h-12" 
           />
         </a>
 

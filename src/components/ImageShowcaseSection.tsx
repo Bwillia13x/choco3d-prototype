@@ -1,5 +1,6 @@
 
 import React from "react";
+import chocolateSculptures from "@/assets/chocolate-sculptures-showcase.jpg";
 
 const ImageShowcaseSection = () => {
   return (
@@ -18,8 +19,8 @@ const ImageShowcaseSection = () => {
         <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant mx-auto max-w-4xl animate-on-scroll">
           <div className="w-full">
             <img 
-              src="/lovable-uploads/c3d5522b-6886-4b75-8ffc-d020016bb9c2.png" 
-              alt="Choco3D precision chocolate printing technology" 
+              src={chocolateSculptures} 
+              alt="Exquisite 3D printed chocolate sculptures with intricate geometric patterns created by Choco3D" 
               className="w-full h-auto object-cover"
             />
           </div>

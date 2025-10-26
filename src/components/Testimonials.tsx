@@ -74,7 +74,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white relative" id="testimonials" ref={sectionRef}>
-      <div className="section-container opacity-0 animate-on-scroll">
+      <div className="section-container animate-on-scroll">
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
           <div className="pulse-chip mx-auto mb-4 sm:mb-6">
             <span>Success Stories</span>
@@ -91,7 +91,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className="opacity-0 animate-on-scroll"
+              className="animate-on-scroll"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <TestimonialCard 

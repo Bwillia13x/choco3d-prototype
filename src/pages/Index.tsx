@@ -11,6 +11,7 @@ import Features from "@/components/Features";
 import CTA from "@/components/CTA";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
+import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -75,6 +76,7 @@ const Index = () => {
         <Newsletter />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

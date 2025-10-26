@@ -54,11 +54,11 @@ const CTA = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#contact" className="button-primary group flex items-center justify-center w-full sm:w-auto">
+            <a href="#contact" className="button-primary group flex items-center justify-center w-full sm:w-auto text-base">
               Request a Demo
-              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-2" />
             </a>
-            <a href="#specifications" className="button-secondary w-full sm:w-auto text-center">
+            <a href="#specifications" className="button-secondary w-full sm:w-auto text-center text-base">
               View Technical Specs
             </a>
           </div>

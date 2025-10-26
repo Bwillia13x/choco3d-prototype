@@ -80,7 +80,7 @@ const Gallery = () => {
               className="gallery-item opacity-0 group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+              <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 cursor-pointer">
                 <div className="aspect-square overflow-hidden">
                   <img 
                     src={item.image} 

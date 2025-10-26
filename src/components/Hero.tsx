@@ -125,26 +125,21 @@ const Hero = () => {
             </p>
             
             <div 
-              className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" 
+              className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in items-start sm:items-center" 
               style={{ animationDelay: "0.7s" }}
             >
               <a 
                 href="#get-access" 
-                className="flex items-center justify-center group w-full sm:w-auto text-center" 
-                style={{
-                  backgroundColor: '#FE5C02',
-                  borderRadius: '1440px',
-                  boxSizing: 'border-box',
-                  color: '#FFFFFF',
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  lineHeight: '20px',
-                  padding: '16px 24px', // Slightly reduced padding for mobile
-                  border: '1px solid white',
-                }}
+                className="button-primary group flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
               >
                 Request Access
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-2" />
+              </a>
+              <a 
+                href="#specifications" 
+                className="button-secondary w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-center text-base sm:text-lg"
+              >
+                Learn More
               </a>
             </div>
           </div>

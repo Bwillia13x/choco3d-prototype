@@ -139,7 +139,7 @@
   }
 
   .pulse-chip {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-pulse-100 text-pulse-600 border border-pulse-200;
+    @apply inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-pulse-100 text-pulse-600 border border-pulse-200 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105;
   }
   
   .section-container {
@@ -163,11 +163,11 @@
   }
   
   .button-primary {
-    @apply bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98];
+    @apply bg-pulse-500 hover:bg-pulse-600 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.03] active:scale-[0.97] hover:-translate-y-0.5;
   }
 
   .button-secondary {
-    @apply bg-transparent border-2 border-gray-300 hover:border-pulse-500 text-gray-800 hover:text-pulse-500 font-medium py-3 px-6 rounded-full transition-all duration-300 hover:bg-pulse-50;
+    @apply bg-transparent border-2 border-gray-300 hover:border-pulse-500 text-gray-800 hover:text-pulse-500 font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:bg-pulse-50 hover:-translate-y-0.5 hover:shadow-md;
   }
   
   .nav-link {
@@ -232,13 +232,109 @@
 }
 
 /* Smooth transitions for all interactive elements */
-a, button, input, textarea {
+a, button, input, textarea, select {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Focus visible improvements */
 *:focus-visible {
-  outline: 2px solid hsl(var(--pulse-500));
+  outline: 2px solid hsl(24 95% 53%);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* Improved scroll behavior */
+html {
+  scroll-padding-top: 100px;
+}
+
+/* Selection colors */
+::selection {
+  background-color: hsl(24 95% 53% / 0.2);
+  color: hsl(222.2 84% 4.9%);
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Loading skeleton animation */
+@keyframes skeleton {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.skeleton {
+  animation: skeleton 1.5s ease-in-out infinite;
+}
+
+/* Smooth fade up animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+/* Pulse animation for attention */
+@keyframes pulse-attention {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+.pulse-attention {
+  animation: pulse-attention 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Smooth image loading */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
 }

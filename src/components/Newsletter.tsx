@@ -41,9 +41,20 @@ const Newsletter = () => {
           
           <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4 items-start md:items-center">
             <div className="relative flex-grow">
-              <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email address" className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700" required />
+              <input 
+                type="email" 
+                value={email} 
+                onChange={e => setEmail(e.target.value)} 
+                placeholder="Enter your email address" 
+                className="w-full px-6 py-4 rounded-full border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 focus:border-transparent text-gray-700 transition-all duration-300 hover:border-gray-300" 
+                required 
+              />
             </div>
-            <button type="submit" disabled={isSubmitting} className="bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-300 md:ml-4">
+            <button 
+              type="submit" 
+              disabled={isSubmitting} 
+              className="bg-pulse-500 hover:bg-pulse-600 disabled:bg-pulse-400 disabled:cursor-not-allowed text-white font-semibold py-4 px-10 rounded-full transition-all duration-300 md:ml-4 shadow-lg hover:shadow-xl active:scale-95 hover:-translate-y-0.5"
+            >
               {isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </form>

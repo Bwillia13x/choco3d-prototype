@@ -11,7 +11,6 @@ import Features from "@/components/Features";
 import CTA from "@/components/CTA";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
-import MadeByHumans from "@/components/MadeByHumans";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -74,7 +73,6 @@ const Index = () => {
         <CTA />
         <Testimonials />
         <Newsletter />
-        <MadeByHumans />
       </main>
       <Footer />
     </div>

@@ -154,11 +154,10 @@ const Hero = () => {
             
             <div className="relative z-10 animate-fade-in" style={{ animationDelay: "0.9s" }}>
               <img 
-                src="/choco3d-logo.png" 
+                src="/choco3d-logo-transparent.png" 
                 alt="Choco3D Logo" 
                 className="w-full h-auto max-w-md mx-auto drop-shadow-2xl"
                 style={{
-                  mixBlendMode: 'multiply',
                   filter: 'drop-shadow(0 10px 30px rgba(254, 92, 2, 0.3)) drop-shadow(0 0 60px rgba(254, 92, 2, 0.2))',
                 }}
               />

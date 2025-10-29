@@ -96,6 +96,7 @@ const Navbar = () => {
   };
 
   return (
+    <>
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
@@ -206,6 +207,8 @@ const Navbar = () => {
         </button>
       </div>
 
+    </header>
+
       {/* Mobile Navigation Overlay */}
       {isMenuOpen && (
         <div 
@@ -216,13 +219,11 @@ const Navbar = () => {
       )}
       
       {/* Mobile Navigation Menu */}
-      <div 
-        ref={menuRef}
-        className={cn(
-          "fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-white lg:hidden shadow-2xl z-[70] transition-transform duration-300 ease-out",
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        )}
-      >
+      {isMenuOpen && (
+        <div 
+          ref={menuRef}
+          className="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-white lg:hidden shadow-2xl z-[70] animate-slide-in-right"
+        >
         <div className="flex flex-col h-full">
           {/* Mobile Menu Header */}
           <div className="flex items-center justify-between p-6 border-b">
@@ -318,8 +319,9 @@ const Navbar = () => {
             </a>
           </div>
         </div>
-      </div>
-    </header>
+        </div>
+      )}
+    </>
   );
 };
 

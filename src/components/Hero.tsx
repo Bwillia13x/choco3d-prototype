@@ -145,24 +145,6 @@ const Hero = () => {
               </a>
             </div>
           </div>
-          
-          <div className="w-full lg:w-1/2 relative mt-6 lg:mt-0 flex items-center justify-center">
-            {/* Ambient glow effect behind logo */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-64 h-64 bg-gradient-to-br from-pulse-400/30 via-orange-300/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
-            </div>
-            
-            <div className="relative z-10 animate-fade-in" style={{ animationDelay: "0.9s" }}>
-              <img 
-                src="/choco3d-logo-transparent.png" 
-                alt="Choco3D Logo" 
-                className="w-full h-auto max-w-md mx-auto drop-shadow-2xl"
-                style={{
-                  filter: 'drop-shadow(0 10px 30px rgba(254, 92, 2, 0.3)) drop-shadow(0 0 60px rgba(254, 92, 2, 0.2))',
-                }}
-              />
-            </div>
-          </div>
         </div>
       </div>
       

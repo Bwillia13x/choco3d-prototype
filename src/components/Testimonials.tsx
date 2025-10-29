@@ -42,27 +42,30 @@ const TestimonialCard = ({
   backgroundImage = "/background-section1.png"
 }: TestimonialProps) => {
   return (
-    <div className="group relative bg-cover bg-center rounded-2xl p-8 sm:p-10 h-full flex flex-col justify-between text-white transform transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl overflow-hidden" style={{
+    <div className="group relative bg-cover bg-center rounded-2xl p-8 sm:p-10 h-full flex flex-col justify-between text-white transform transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl overflow-hidden border-2 border-transparent hover:border-white/20" style={{
       backgroundImage: `url('${backgroundImage}')`
     }}>
       {/* Overlay gradient for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-black/60 group-hover:from-black/50 group-hover:via-black/30 group-hover:to-black/70 transition-all duration-500"></div>
       
-      {/* Decorative corner element */}
-      <div className="absolute top-0 right-0 w-20 h-20 bg-white/90 rounded-bl-3xl flex items-center justify-center">
-        <Quote className="w-10 h-10 text-pulse-500 transform rotate-180" />
+      {/* Decorative corner element with animation */}
+      <div className="absolute top-0 right-0 w-20 h-20 bg-white/90 rounded-bl-3xl flex items-center justify-center transition-all duration-300 group-hover:w-24 group-hover:h-24">
+        <Quote className="w-10 h-10 text-pulse-500 transform rotate-180 transition-transform duration-300 group-hover:scale-110" />
       </div>
+      
+      {/* Shimmer effect on hover */}
+      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
       
       <div className="relative z-10">
         <div className="mb-6">
-          <Quote className="w-12 h-12 text-white/40 mb-4" />
+          <Quote className="w-12 h-12 text-white/40 mb-4 transition-all duration-300 group-hover:text-white/60 group-hover:scale-110" />
         </div>
-        <p className="text-lg sm:text-xl mb-8 font-medium leading-relaxed text-white/95 pr-12">
+        <p className="text-lg sm:text-xl mb-8 font-medium leading-relaxed text-white/95 pr-12 transition-all duration-300 group-hover:text-white">
           {content}
         </p>
-        <div className="border-t border-white/20 pt-6 mt-auto">
-          <h4 className="font-semibold text-xl mb-1">{author}</h4>
-          <p className="text-white/70 text-sm">{role}</p>
+        <div className="border-t border-white/20 pt-6 mt-auto transition-colors duration-300 group-hover:border-white/40">
+          <h4 className="font-semibold text-xl mb-1 transition-all duration-300 group-hover:text-white">{author}</h4>
+          <p className="text-white/70 text-sm transition-colors duration-300 group-hover:text-white/90">{role}</p>
         </div>
       </div>
     </div>

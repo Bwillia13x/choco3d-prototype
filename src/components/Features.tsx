@@ -40,17 +40,17 @@ const FeatureCard = ({ icon, title, description, index }: FeatureCardProps) => {
     <div 
       ref={cardRef}
       className={cn(
-        "feature-card glass-card opacity-0 p-4 sm:p-6",
+        "feature-card glass-card opacity-0 p-4 sm:p-6 group cursor-pointer",
         "lg:hover:bg-gradient-to-br lg:hover:from-white lg:hover:to-pulse-50",
-        "transition-all duration-300"
+        "transition-all duration-500 hover:shadow-elegant-hover hover:-translate-y-2"
       )}
       style={{ animationDelay: `${0.1 * index}s` }}
     >
-      <div className="rounded-full bg-pulse-50 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-pulse-500 mb-4 sm:mb-5">
+      <div className="rounded-full bg-pulse-50 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-pulse-500 mb-4 sm:mb-5 transition-all duration-300 group-hover:bg-pulse-500 group-hover:text-white group-hover:scale-110 group-hover:rotate-6">
         {icon}
       </div>
-      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">{title}</h3>
-      <p className="text-gray-600 text-sm sm:text-base">{description}</p>
+      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-pulse-600">{title}</h3>
+      <p className="text-gray-600 text-sm sm:text-base transition-colors duration-300 group-hover:text-gray-700">{description}</p>
     </div>
   );
 };

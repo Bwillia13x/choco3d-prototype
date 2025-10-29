@@ -115,7 +115,7 @@ const Navbar = () => {
           aria-label="Choco3D Home"
         >
           <img 
-            src="/choco3d-logo.png" 
+            src="/choco3d-logo-transparent.png" 
             alt="Choco3D Logo" 
             className={cn(
               "transition-all duration-300",
@@ -228,7 +228,7 @@ const Navbar = () => {
           {/* Mobile Menu Header */}
           <div className="flex items-center justify-between p-6 border-b">
             <img 
-              src="/choco3d-logo.png" 
+              src="/choco3d-logo-transparent.png" 
               alt="Choco3D Logo" 
               className="h-10" 
             />

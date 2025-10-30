@@ -17,6 +17,8 @@ const FeatureCard = ({ icon, title, description, index }: FeatureCardProps) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            // Remove opacity-0 and add animation
+            entry.target.classList.remove("opacity-0");
             entry.target.classList.add("animate-fade-in");
             observer.unobserve(entry.target);
           }

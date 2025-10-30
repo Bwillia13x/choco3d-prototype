@@ -236,18 +236,14 @@
   animation: fadeIn 0.8s ease forwards;
 }
 
-/* Critical: Ensure animate-fade-in overrides opacity-0 */
+/* Ensure animate-fade-in works correctly */
 .animate-fade-in {
-  animation: fadeIn 0.7s ease-out forwards !important;
-  opacity: 1 !important;
-  animation-fill-mode: forwards !important;
+  animation: fadeIn 0.7s ease-out forwards;
 }
 
-/* Gallery and feature cards animation support */
-.gallery-item.animate-fade-in,
-.feature-card.animate-fade-in,
+/* Remove opacity-0 when animation is applied */
 .opacity-0.animate-fade-in {
-  animation: fadeIn 0.7s ease-out forwards !important;
+  animation: fadeIn 0.7s ease-out forwards;
 }
 
 .stagger-1 { animation-delay: 0.1s; }

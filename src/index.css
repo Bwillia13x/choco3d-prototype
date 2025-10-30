@@ -156,11 +156,11 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight text-gray-900 leading-tight;
   }
 
   .section-subtitle {
-    @apply text-lg md:text-xl text-gray-600 mt-4 max-w-3xl;
+    @apply text-lg md:text-xl text-gray-600 mt-4 max-w-3xl leading-relaxed;
   }
 
   .glass-card {
@@ -168,7 +168,7 @@
   }
 
   .feature-card {
-    @apply p-6 sm:p-8 rounded-2xl bg-white border border-gray-100 transition-all duration-500 hover:translate-y-[-8px] hover:shadow-xl hover:border-pulse-200;
+    @apply p-6 sm:p-8 rounded-2xl bg-white border border-gray-100 transition-all duration-500 hover:translate-y-[-8px] hover:shadow-xl hover:border-pulse-200 hover:bg-gradient-to-br hover:from-white hover:to-orange-50/30;
   }
   
   .button-primary {
@@ -278,14 +278,15 @@
   box-shadow: 
     0 1px 3px 0 rgba(0, 0, 0, 0.08),
     0 10px 40px -10px rgba(0, 0, 0, 0.12), 
-    0 0 30px -8px rgba(254, 92, 2, 0.06);
+    0 0 30px -8px rgba(249, 115, 22, 0.08);
 }
 
 .shadow-elegant-hover {
   box-shadow: 
     0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 20px 60px -15px rgba(0, 0, 0, 0.18), 
-    0 0 40px -10px rgba(254, 92, 2, 0.12);
+    0 0 40px -10px rgba(249, 115, 22, 0.15),
+    0 0 60px -20px rgba(249, 115, 22, 0.1);
 }
 
 .shadow-glow {
@@ -415,10 +416,11 @@ img[loading="lazy"].loaded {
 
 /* Text gradients */
 .text-gradient-primary {
-  background: linear-gradient(135deg, #FE5C02, #FF7A33);
+  background: linear-gradient(135deg, #f97316, #ea580c, #fb923c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: 700;
 }
 
 /* Border gradients */

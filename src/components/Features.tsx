@@ -46,11 +46,11 @@ const FeatureCard = ({ icon, title, description, index }: FeatureCardProps) => {
       )}
       style={{ animationDelay: `${0.1 * index}s` }}
     >
-      <div className="rounded-full bg-pulse-50 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-pulse-500 mb-4 sm:mb-5 transition-all duration-300 group-hover:bg-pulse-500 group-hover:text-white group-hover:scale-110 group-hover:rotate-6">
+      <div className="rounded-2xl bg-gradient-to-br from-pulse-50 to-orange-100/50 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-pulse-600 mb-5 sm:mb-6 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-pulse-500 group-hover:to-orange-600 group-hover:text-white group-hover:scale-110 group-hover:rotate-3 shadow-md group-hover:shadow-xl">
         {icon}
       </div>
-      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-pulse-600">{title}</h3>
-      <p className="text-gray-600 text-sm sm:text-base transition-colors duration-300 group-hover:text-gray-700">{description}</p>
+      <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-pulse-600 text-gray-900">{title}</h3>
+      <p className="text-gray-600 text-sm sm:text-base leading-relaxed transition-colors duration-300 group-hover:text-gray-700">{description}</p>
     </div>
   );
 };
@@ -94,31 +94,32 @@ const Features = () => {
           <div className="pulse-chip mx-auto mb-3 sm:mb-4 opacity-0 fade-in-element">
             <span>Features</span>
           </div>
-          <h2 className="section-title mb-3 sm:mb-4 opacity-0 fade-in-element">
-            Precision Technology, <br className="hidden sm:block" />Limitless Creativity
+          <h2 className="section-title mb-4 sm:mb-5 opacity-0 fade-in-element font-display">
+            Precision Technology, <br className="hidden sm:block" />
+            <span className="text-gradient-primary">Limitless Creativity</span>
           </h2>
-          <p className="section-subtitle mx-auto opacity-0 fade-in-element">
-            Built with cutting-edge 3D printing technology to deliver exceptional quality and endless customization.
+          <p className="section-subtitle mx-auto opacity-0 fade-in-element text-gray-600 max-w-2xl">
+            Industry-leading 3D printing technology engineered to deliver exceptional quality, intricate detail, and endless customization possibilities.
           </p>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           <FeatureCard
             icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-6 sm:h-6"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 1 1-4-4"></path><path d="M12 8a4 4 0 1 0 4 4"></path><circle cx="12" cy="12" r="1"></circle></svg>}
-            title="Custom Designs"
-            description="Create unique chocolate pieces tailored to your brand and client specifications with unlimited design flexibility."
+            title="Infinite Design Freedom"
+            description="Transform any concept into reality with unlimited design possibilities. From intricate logos to complex 3D sculptures, bring your vision to life."
             index={0}
           />
           <FeatureCard
             icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-6 sm:h-6"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M9 13v-1h6v1"></path><path d="M11 18.5l-.5-1 1-.5.5 1.5-1 .5-.5-1 1-.5"></path><path d="M9.5 12 9 11H4"></path></svg>}
-            title="Rapid Prototyping"
-            description="Transform concepts to reality in hours, not days. Perfect for client presentations and product development."
+            title="Lightning-Fast Prototyping"
+            description="Go from concept to finished product in hours. Iterate rapidly, impress clients instantly, and accelerate your creative workflow."
             index={1}
           />
           <FeatureCard
             icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-6 sm:h-6"><rect width="18" height="11" x="3" y="11" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path><line x1="8" x2="8" y1="16" y2="16"></line><line x1="16" x2="16" y1="16" y2="16"></line></svg>}
-            title="Micron Precision"
-            description="Achieve intricate details and flawless finishes with 50-micron resolution printing technology."
+            title="50-Micron Precision"
+            description="Achieve museum-quality detail with industry-leading resolution. Every curve, texture, and intricate feature rendered with stunning accuracy."
             index={2}
           />
           <FeatureCard

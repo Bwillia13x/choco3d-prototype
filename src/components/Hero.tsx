@@ -113,17 +113,18 @@ const Hero = () => {
             </div>
             
             <h1 
-              className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" 
+              className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] opacity-0 animate-fade-in font-display" 
               style={{ animationDelay: "0.3s" }}
             >
-              Choco3D: Where Precision<br className="hidden sm:inline" />Meets Indulgence
+              Where Precision<br className="hidden sm:inline" />
+              <span className="text-gradient-primary">Meets Indulgence</span>
             </h1>
             
             <p 
               style={{ animationDelay: "0.5s" }} 
-              className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left"
+              className="section-subtitle mt-4 sm:mt-6 mb-6 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-700 font-normal text-base sm:text-xl text-left max-w-xl"
             >
-              Revolutionary 3D chocolate printing solutions for businesses that demand excellence.
+              Revolutionary 3D chocolate printing technology that transforms culinary creativity into edible masterpieces.
             </p>
             
             <div 

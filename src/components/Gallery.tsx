@@ -84,7 +84,8 @@ const Gallery = () => {
                 <div className="aspect-square overflow-hidden relative">
                   <img 
                     src={item.image} 
-                    alt={`${item.title} - 3D printed chocolate creation by Choco3D`}
+                    alt={`${item.title} - 3D printed chocolate creation by Choco3D showcasing ${item.description.toLowerCase()}`}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                   />
                   {/* Shimmer effect */}
@@ -105,7 +106,19 @@ const Gallery = () => {
           <p className="text-gray-600 mb-6">
             Every design printed with food-safe materials and precision temperature control
           </p>
-          <a href="#get-access" className="button-primary inline-flex items-center justify-center">
+          <a 
+            href="#get-access" 
+            className="button-primary inline-flex items-center justify-center"
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById('get-access');
+              if (element) {
+                const offset = 80;
+                const targetPosition = element.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+              }
+            }}
+          >
             Start Creating Today
           </a>
         </div>

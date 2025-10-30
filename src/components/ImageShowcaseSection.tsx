@@ -21,6 +21,7 @@ const ImageShowcaseSection = () => {
             <img 
               src={chocolateSculptures} 
               alt="Exquisite 3D printed chocolate sculptures with intricate geometric patterns created by Choco3D" 
+              loading="lazy"
               className="w-full h-auto object-cover"
             />
           </div>

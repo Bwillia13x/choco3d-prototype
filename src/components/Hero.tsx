@@ -105,7 +105,7 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
           <div className="w-full lg:w-1/2">
             <div 
-              className="pulse-chip mb-3 sm:mb-6 opacity-0 animate-fade-in" 
+              className="pulse-chip mb-3 sm:mb-6 animate-fade-in" 
               style={{ animationDelay: "0.1s" }}
             >
               <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">01</span>
@@ -113,7 +113,7 @@ const Hero = () => {
             </div>
             
             <h1 
-              className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" 
+              className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight animate-fade-in" 
               style={{ animationDelay: "0.3s" }}
             >
               Choco3D: Where Precision<br className="hidden sm:inline" /> Meets Indulgence
@@ -121,13 +121,13 @@ const Hero = () => {
             
             <p 
               style={{ animationDelay: "0.5s" }} 
-              className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left"
+              className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left"
             >
               Revolutionary 3D chocolate printing solutions for businesses that demand excellence.
             </p>
             
             <div 
-              className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in items-start sm:items-center" 
+              className="flex flex-col sm:flex-row gap-4 animate-fade-in items-start sm:items-center" 
               style={{ animationDelay: "0.7s" }}
             >
               <a 

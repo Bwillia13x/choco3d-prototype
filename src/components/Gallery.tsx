@@ -81,8 +81,7 @@ const Gallery = () => {
           {galleryItems.map((item, index) => (
             <div 
               key={index}
-              className="gallery-item opacity-0 group"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="gallery-item group"
             >
               <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 cursor-pointer border-2 border-gray-100 hover:border-pulse-200">
                 <div className="aspect-square overflow-hidden relative">

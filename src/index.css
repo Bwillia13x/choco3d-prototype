@@ -231,18 +231,12 @@
 }
 
 .fadeIn {
-  opacity: 0;
-  transform: translateY(20px);
   animation: fadeIn 0.8s ease forwards;
 }
 
-/* Ensure animate-fade-in works correctly */
+/* Ensure animate-fade-in animation includes initial opacity */
 .animate-fade-in {
-  animation: fadeIn 0.7s ease-out forwards;
-}
-
-/* Remove opacity-0 when animation is applied */
-.opacity-0.animate-fade-in {
+  opacity: 0;
   animation: fadeIn 0.7s ease-out forwards;
 }
 

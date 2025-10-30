@@ -234,10 +234,9 @@
   animation: fadeIn 0.8s ease forwards;
 }
 
-/* Ensure animate-fade-in animation includes initial opacity */
+/* Fade in animation - elements are visible by default */
 .animate-fade-in {
-  opacity: 0;
-  animation: fadeIn 0.7s ease-out forwards;
+  animation: fadeIn 0.7s ease-out;
 }
 
 .stagger-1 { animation-delay: 0.1s; }

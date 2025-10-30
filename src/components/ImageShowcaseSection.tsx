@@ -1,8 +1,6 @@
 
 import React from "react";
-
-// Direct import for reliable loading
-import chocolateSculptures from "/lovable-uploads/dc13e94f-beeb-4671-8a22-0968498cdb4c.png";
+import chocolateSculptures from "@/assets/chocolate-sculptures-showcase.jpg";
 
 const ImageShowcaseSection = () => {
   return (
@@ -23,7 +21,6 @@ const ImageShowcaseSection = () => {
             <img 
               src={chocolateSculptures} 
               alt="Exquisite 3D printed chocolate sculptures with intricate geometric patterns created by Choco3D" 
-              loading="lazy"
               className="w-full h-auto object-cover"
             />
           </div>

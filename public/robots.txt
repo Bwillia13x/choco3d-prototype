@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://choco3d.lovable.app/sitemap.xml

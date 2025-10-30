@@ -10,15 +10,9 @@ const MadeByHumans = () => {
           backgroundImage: "url('/background-section3.png')"
         }}>
             <div className="flex items-center text-white">
-              <img 
-                src="/logo.svg" 
-                alt="Choco3D Logo" 
-                className="h-5 sm:h-6 w-auto mr-3 invert"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
-              <span className="text-white text-xl font-medium">Choco3D</span>
+              <img src="/logo.svg" alt="Choco3D Logo" className="h-5 sm:h-6 w-auto mr-3 invert" />
+              <span className="text-white text-xl font-medium">Choco3D
+            </span>
             </div>
             
             <div style={{

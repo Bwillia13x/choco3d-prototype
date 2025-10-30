@@ -24,7 +24,7 @@ const Newsletter = () => {
       setIsSubmitting(false);
     }, 1000);
   };
-  return <section id="get-access" className="bg-gradient-to-b from-white via-gray-50/30 to-white py-16 sm:py-20 relative overflow-hidden">
+  return <section id="newsletter" className="bg-gradient-to-b from-white via-gray-50/30 to-white py-16 sm:py-20 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-10 right-10 w-64 h-64 bg-pulse-100 rounded-full blur-3xl opacity-30"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-pulse-50 to-transparent rounded-full blur-3xl opacity-40"></div>
@@ -60,10 +60,9 @@ const Newsletter = () => {
               type="submit" 
               disabled={isSubmitting} 
               className="button-primary disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap group"
-              aria-label={isSubmitting ? "Submitting subscription" : "Subscribe to newsletter"}
             >
               {isSubmitting ? "Submitting..." : "Subscribe Now"}
-              <svg className="w-4 h-4 ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="w-4 h-4 ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </button>

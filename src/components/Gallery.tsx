@@ -1,10 +1,8 @@
 import React, { useEffect, useRef } from "react";
-
-// Direct imports for reliable loading
-import gallery1 from "/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png";
-import gallery2 from "/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.png";
-import gallery3 from "/lovable-uploads/af412c03-21e4-4856-82ff-d1a975dc84a9.png";
-import gallery4 from "/lovable-uploads/c3d5522b-6886-4b75-8ffc-d020016bb9c2.png";
+import gallery1 from "@/assets/gallery-chocolate-1.jpg";
+import gallery2 from "@/assets/gallery-chocolate-2.jpg";
+import gallery3 from "@/assets/gallery-chocolate-3.jpg";
+import gallery4 from "@/assets/gallery-chocolate-4.jpg";
 
 const Gallery = () => {
   const galleryRef = useRef<HTMLDivElement>(null);
@@ -79,14 +77,14 @@ const Gallery = () => {
           {galleryItems.map((item, index) => (
             <div 
               key={index}
-              className="gallery-item group"
+              className="gallery-item opacity-0 group"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 cursor-pointer border-2 border-gray-100 hover:border-pulse-200">
                 <div className="aspect-square overflow-hidden relative">
                   <img 
                     src={item.image} 
-                    alt={`${item.title} - 3D printed chocolate creation by Choco3D showcasing ${item.description.toLowerCase()}`}
-                    loading="lazy"
+                    alt={`${item.title} - 3D printed chocolate creation by Choco3D`}
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                   />
                   {/* Shimmer effect */}
@@ -107,19 +105,7 @@ const Gallery = () => {
           <p className="text-gray-600 mb-6">
             Every design printed with food-safe materials and precision temperature control
           </p>
-          <a 
-            href="#get-access" 
-            className="button-primary inline-flex items-center justify-center"
-            onClick={(e) => {
-              e.preventDefault();
-              const element = document.getElementById('get-access');
-              if (element) {
-                const offset = 80;
-                const targetPosition = element.getBoundingClientRect().top + window.scrollY - offset;
-                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-              }
-            }}
-          >
+          <a href="#get-access" className="button-primary inline-flex items-center justify-center">
             Start Creating Today
           </a>
         </div>

@@ -88,7 +88,7 @@ const Hero = () => {
   }, [isMobile]);
   
   return (
-    <section 
+    <header 
       className="overflow-hidden relative bg-cover bg-gradient-to-b from-orange-50/30 via-white to-white" 
       id="hero" 
       style={{
@@ -116,7 +116,7 @@ const Hero = () => {
               className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" 
               style={{ animationDelay: "0.3s" }}
             >
-              Choco3D: Where Precision<br className="hidden sm:inline" />Meets Indulgence
+              Choco3D: Where Precision<br className="hidden sm:inline" /> Meets Indulgence
             </h1>
             
             <p 
@@ -149,7 +149,7 @@ const Hero = () => {
       </div>
       
       <div className="hidden lg:block absolute bottom-0 left-1/4 w-64 h-64 bg-pulse-100/30 rounded-full blur-3xl -z-10 parallax" data-speed="0.05"></div>
-    </section>
+    </header>
   );
 };
 

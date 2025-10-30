@@ -63,8 +63,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}
-        <Hero />
+      <Hero />
+      <main className="space-y-4 sm:space-y-8">
         <HumanoidSection />
         <SpecsSection />
         <DetailsSection />

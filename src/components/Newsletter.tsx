@@ -24,7 +24,7 @@ const Newsletter = () => {
       setIsSubmitting(false);
     }, 1000);
   };
-  return <section id="newsletter" className="bg-gradient-to-b from-white via-gray-50/30 to-white py-16 sm:py-20 relative overflow-hidden">
+  return <section id="get-access" className="bg-gradient-to-b from-white via-gray-50/30 to-white py-16 sm:py-20 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-10 right-10 w-64 h-64 bg-pulse-100 rounded-full blur-3xl opacity-30"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-pulse-50 to-transparent rounded-full blur-3xl opacity-40"></div>

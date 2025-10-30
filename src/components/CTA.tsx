@@ -59,7 +59,19 @@ const CTA = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-            <a href="#contact" className="button-primary group flex items-center justify-center w-full sm:w-auto text-base sm:text-lg px-8 py-4 hover:scale-105 hover:shadow-glow">
+            <a 
+              href="#get-access" 
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById('get-access');
+                if (element) {
+                  const offset = 80;
+                  const targetPosition = element.getBoundingClientRect().top + window.scrollY - offset;
+                  window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+              }}
+              className="button-primary group flex items-center justify-center w-full sm:w-auto text-base sm:text-lg px-8 py-4 hover:scale-105 hover:shadow-glow"
+            >
               Request a Demo
               <ArrowRight className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
             </a>

@@ -116,10 +116,10 @@ const Navbar = () => {
         >
           <img 
             src="/choco3d-logo-transparent.png" 
-            alt="Choco3D Logo" 
+            alt="Choco3D - Industrial 3D Chocolate Printing Solutions" 
             className={cn(
               "transition-all duration-300",
-              isScrolled ? "h-9 sm:h-10" : "h-10 sm:h-12"
+              isScrolled ? "h-10 sm:h-12" : "h-12 sm:h-14"
             )} 
           />
         </button>
@@ -229,8 +229,8 @@ const Navbar = () => {
           <div className="flex items-center justify-between p-6 border-b">
             <img 
               src="/choco3d-logo-transparent.png" 
-              alt="Choco3D Logo" 
-              className="h-10" 
+              alt="Choco3D - Industrial 3D Chocolate Printing Solutions" 
+              className="h-12" 
             />
             <button 
               onClick={closeMenu}

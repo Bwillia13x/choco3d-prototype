@@ -1,8 +1,8 @@
 
 import React from "react";
 
-// Use public path for better loading
-const chocolateSculptures = "/lovable-uploads/dc13e94f-beeb-4671-8a22-0968498cdb4c.png";
+// Direct import for reliable loading
+import chocolateSculptures from "/lovable-uploads/dc13e94f-beeb-4671-8a22-0968498cdb4c.png";
 
 const ImageShowcaseSection = () => {
   return (

@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
 
-// Import images - using dynamic approach for better error handling
-const gallery1 = "/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png";
-const gallery2 = "/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.png";
-const gallery3 = "/lovable-uploads/af412c03-21e4-4856-82ff-d1a975dc84a9.png";
-const gallery4 = "/lovable-uploads/c3d5522b-6886-4b75-8ffc-d020016bb9c2.png";
+// Direct imports for reliable loading
+import gallery1 from "/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png";
+import gallery2 from "/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.png";
+import gallery3 from "/lovable-uploads/af412c03-21e4-4856-82ff-d1a975dc84a9.png";
+import gallery4 from "/lovable-uploads/c3d5522b-6886-4b75-8ffc-d020016bb9c2.png";
 
 const Gallery = () => {
   const galleryRef = useRef<HTMLDivElement>(null);

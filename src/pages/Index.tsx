@@ -13,6 +13,7 @@ import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
   // Initialize intersection observer to detect when elements enter viewport
@@ -77,6 +78,7 @@ const Index = () => {
       </main>
       <Footer />
       <ScrollToTop />
+      <Chatbot />
     </div>
   );
 };
